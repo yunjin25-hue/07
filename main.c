@@ -1,27 +1,19 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-  //실습 5
-  
-void sub(void);
+  //실습 6-1
+
+int all_files; 
+
+extern void sub();
 
 int main(void)
 {
-    int i;
-    for(i=0; i<3; i++)
-     sub();
+    sub();
+    printf("%d\n",all_files);
     system("PAUSE");
     return 0;
 }
 
-void sub(void)
-{
-     int auto_count=0;
-     static int static_count=0; //정적 할당: 변수 소멸 안 되고 계속 유지  
-     // 따라서 지난 값에 ++ 
-     auto_count++;
-     static_count++;
-     printf("auto_count=%d\n", auto_count);
-     printf("static_count=%d\n",static_count);
-}
-
+// main 함수 실행 후 sub 함수 실행  
+// sub 함수 : extern을 통해 연결됨  
