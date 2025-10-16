@@ -1,26 +1,34 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-  //실습 3
+  //실습 4
   
-int inc(int counter);
+//전역변수는 알아서 0으로 초기화됨 
+//추가로 초기화 문법 넣으면 원하는 초기화값 들어감  
 
-int main(int argc, char *argv[])
+void f(void);
+
+//int i; //이거 없애고 for문마다 int i추가  
+int main(void)
 {
-  int i=10;
-  
-  printf("함수 호출전 i=%d\n",i);
-  i=inc(i); //inc(i)를 i=inc(i)로 변경해야 함수의 반환값(counter값)을 받을 수 있음  
-  printf("함수 호출후 i=%d\n",i);
-  
-  system("PAUSE");	
+  int i=0;
+  for(i=0; i<5; i++) //i가 전역 변수라서 여기서도 ++ , 아래에서도 ++ 
+  //따라서 i를 지역변수로 바꾸기  
+  {
+    f();
+  } 
+  system("PAUSE");
   return 0;
 }
-int inc(int counter)
+
+void f(void)
 {
-  counter++;
-  system("PAUSE");	
-  return counter;
+  int i=0; 
+  for(i=0; i<10; i++)
+    printf("#"); 
+  
+  //여기다가 시스템 퍼즈 넣으면 안됨  
+	
  } 
   
 
