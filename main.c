@@ -3,7 +3,7 @@
 
   //실습 6-1
 
-int all_files; 
+static int all_files; //static 붙이면 main.c에서만 사용 가능  
 
 extern void sub();
 
